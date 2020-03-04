@@ -1,7 +1,7 @@
 package com.thoughtworks;
 
 @FunctionalInterface
-public interface OwnConsumer {
-    void print(String str);
+public interface OwnConsumer <T> {
+     void print(T t);
 }
 

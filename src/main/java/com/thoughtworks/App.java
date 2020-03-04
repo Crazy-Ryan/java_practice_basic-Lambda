@@ -11,15 +11,25 @@ public class App {
         System.out.println("---predefined functional interface--");
         System.out.println(testStr);
         consumerPrint(testStr);
+        int testNum = 9;
+        System.out.println("---user defined functional interface--");
+        System.out.println("original number:" + testNum);
+        System.out.println(ownFunctionSquare(testNum));
+
     }
 
-    public static void ownConsumerPrint(String text){
-        OwnConsumer ownConsumer = str -> System.out.println("*" + str + "*");
+    public static void ownConsumerPrint(String text) {
+        OwnConsumer<String> ownConsumer = str -> System.out.println("*" + str + "*");
         ownConsumer.print(text);
     }
 
-    public static void consumerPrint(String text){
+    public static void consumerPrint(String text) {
         Consumer<String> consumer = str -> System.out.println("*" + str + "*");
         consumer.accept(text);
+    }
+
+    public static int ownFunctionSquare(int num) {
+        OwnFunction<Integer> ownFunction = number -> number * number;
+        return ownFunction.square(num);
     }
 }

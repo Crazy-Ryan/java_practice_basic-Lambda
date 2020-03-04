@@ -33,7 +33,7 @@ public class App {
     }
 
     public static int ownFunctionSquare(int num) {
-        OwnFunction<Integer> ownFunction = number -> number * number;
+        OwnFunction<Integer, Integer> ownFunction = number -> number * number;
         return ownFunction.square(num);
     }
 
